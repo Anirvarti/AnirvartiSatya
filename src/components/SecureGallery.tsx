@@ -49,8 +49,8 @@ const DEFAULT_PHOTOS: GalleryPhoto[] = [
 ];
 
 const DEFAULT_EMAILS = [
-  'anirvarti@gmail.com', // Admin Default
-  'guest@aistudio.com',
+  'admin@anirvartisatya.dev', // Admin Default
+  'guest@example.com',
   'examiner@university.edu'
 ];
 
@@ -59,7 +59,7 @@ export default function SecureGallery() {
   const [permittedEmails, setPermittedEmails] = useState<string[]>([]);
   
   // Simulated Authentication State for Demonstration
-  const [currentUserEmail, setCurrentUserEmail] = useState<string>('anirvarti@gmail.com');
+  const [currentUserEmail, setCurrentUserEmail] = useState<string>('admin@anirvartisatya.dev');
   const [newEmailInput, setNewEmailInput] = useState<string>('');
   const [newPhotoUrl, setNewPhotoUrl] = useState<string>('');
   const [newPhotoCaption, setNewPhotoCaption] = useState<string>('');
@@ -183,7 +183,7 @@ export default function SecureGallery() {
   };
 
   const handleDeleteEmail = (email: string) => {
-    if (email === 'anirvarti@gmail.com') {
+    if (email === 'admin@anirvartisatya.dev') {
       audio.playErrorSound(); // Admin email cannot be removed
       return;
     }
@@ -193,8 +193,8 @@ export default function SecureGallery() {
   };
 
   // Check if current user is permitted to view the gallery
-  const hasAccess = permittedEmails.includes(currentUserEmail.trim().toLowerCase()) || currentUserEmail.trim().toLowerCase() === 'anirvarti@gmail.com';
-  const isAdmin = currentUserEmail.trim().toLowerCase() === 'anirvarti@gmail.com';
+  const hasAccess = permittedEmails.includes(currentUserEmail.trim().toLowerCase()) || currentUserEmail.trim().toLowerCase() === 'admin@anirvartisatya.dev';
+  const isAdmin = currentUserEmail.trim().toLowerCase() === 'admin@anirvartisatya.dev';
 
   return (
     <div className="space-y-6 flex flex-col select-none animate-fadeIn" id="secure-gallery-view">
@@ -243,7 +243,7 @@ export default function SecureGallery() {
             }}
             className="bg-[#121212] border border-[#222222] text-[#10B981] font-mono text-xs px-3 py-1.5 focus:outline-none focus:border-[#10B981] interactive-node cursor-pointer uppercase font-black rounded-none"
           >
-            <option value="anirvarti@gmail.com">anirvarti@gmail.com (ADMIN)</option>
+            <option value="admin@anirvartisatya.dev">admin@anirvartisatya.dev (ADMIN)</option>
             <option value="examiner@university.edu">examiner@university.edu (AUTHORIZED)</option>
             <option value="intruder@blackhat.org">intruder@blackhat.org (RESTRICTED)</option>
           </select>
@@ -508,7 +508,7 @@ export default function SecureGallery() {
                         <span className="truncate max-w-[150px]">{email}</span>
                       </div>
 
-                      {isAdmin && email !== 'anirvarti@gmail.com' && (
+                      {isAdmin && email !== 'admin@anirvartisatya.dev' && (
                         <button
                           onClick={() => handleDeleteEmail(email)}
                           className="text-gray-600 hover:text-rose-500 transition-colors p-0.5 cursor-pointer interactive-node"
