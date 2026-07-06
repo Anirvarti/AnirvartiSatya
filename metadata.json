@@ -1,0 +1,6 @@
+{
+  "name": "ANIRVARTI SATYA (Satya Prakash) - Developer Portfolio",
+  "description": "A dark, cinematic, interactive developer portfolio for Satya Prakash (alias Anirvarti Satya), featuring an interactive terminal decrypt puzzle, an atmospheric Web Audio synthesizer, and a fluid canvas particle engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
